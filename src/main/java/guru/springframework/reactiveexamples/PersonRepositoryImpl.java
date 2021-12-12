@@ -4,6 +4,8 @@ import guru.springframework.reactiveexamples.domain.Person;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.Objects;
+
 /**
  * @author alejandrolopez
  */
@@ -17,6 +19,12 @@ public class PersonRepositoryImpl implements PersonRepository {
     @Override
     public Mono<Person> getById(Integer id) {
         return Mono.just(michael);
+    }
+
+    public Mono<Person> findById(Integer id) {
+        return findAll()
+                .filter(person -> Objects.equals(person.getId(), id))
+                .singleOrEmpty();
     }
 
     @Override
