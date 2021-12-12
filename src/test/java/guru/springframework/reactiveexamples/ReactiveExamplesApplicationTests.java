@@ -1,4 +1,4 @@
-package com.guru.springframework.reactiveexamples;
+package guru.springframework.reactiveexamples;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
