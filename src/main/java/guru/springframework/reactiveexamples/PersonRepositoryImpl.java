@@ -8,13 +8,19 @@ import reactor.core.publisher.Mono;
  * @author alejandrolopez
  */
 public class PersonRepositoryImpl implements PersonRepository {
+
+    Person michael = new Person(1, "Michael", "Weston");
+    Person fiona = new Person(2, "Fiona", "Glenna");
+    Person sam = new Person(3, "Sam", "Axe");
+    Person jesse = new Person(4, "Jesse", "Porter");
+
     @Override
-    public Mono<Person> getById(String id) {
-        return null;
+    public Mono<Person> getById(Integer id) {
+        return Mono.just(michael);
     }
 
     @Override
     public Flux<Person> findAll() {
-        return null;
+        return Flux.just(michael, fiona, sam, jesse);
     }
 }

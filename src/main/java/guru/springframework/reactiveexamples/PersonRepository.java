@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
  */
 public interface PersonRepository {
 
-    Mono<Person> getById(String id);
+    Mono<Person> getById(Integer id);
 
     Flux<Person> findAll();
 }
